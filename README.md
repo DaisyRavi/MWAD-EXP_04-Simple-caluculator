@@ -46,10 +46,120 @@ Deploy the website.
 Upload to GitHub Pages for free hosting.
 
 ## PROGRAM
+### App.js
+```
+import React, { useState } from 'react';
+import './App.css';
+import { evaluate } from 'mathjs';
 
+function App() {
+  const [input, setInput] = useState('');
+
+  const handleClick = (value) => {
+    if (value === 'AC') {
+      setInput('');
+    } else if (value === '=') {
+      try {
+        setInput(evaluate(input).toString());
+      } catch {
+        setInput('Error');
+      }
+    } else if (value === '+/-') {
+      if (input) setInput((parseFloat(input) * -1).toString());
+    } else {
+      setInput((prev) => prev + value);
+    }
+  };
+
+  const buttons = [
+    'AC', '+/-', '%', '/',
+    '7', '8', '9', '*',
+    '4', '5', '6', '-',
+    '1', '2', '3', '+',
+    '0', '.', '='
+  ];
+
+  return (
+    <div className="calculator">
+      <div className="display">{input || '0'}</div>
+      <div className="buttons">
+        {buttons.map((btn, i) => (
+          <button
+            key={i}
+            className={`button ${btn === '=' ? 'equal' : ''}`}
+            onClick={() => handleClick(btn)}
+          >
+            {btn}
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+export default App;
+
+```
+### App.css
+```
+.calculator {
+  max-width: 320px;
+  margin: 50px auto;
+  border-radius: 20px;
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  background-color: #1c1c1c;
+  color: white;
+  font-family: 'Arial', sans-serif;
+}
+
+.display {
+  background-color: #1c1c1c;
+  padding: 20px;
+  font-size: 2.5em;
+  text-align: right;
+  color: white;
+  min-height: 80px;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.button {
+  padding: 25px;
+  font-size: 1.5em;
+  border: 1px solid #333;
+  background-color: #505050;
+  color: white;
+  cursor: pointer;
+}
+
+.button:nth-child(4n) {
+  background-color: #ff9500;
+  color: white;
+}
+
+.button.equal {
+  background-color: #ff9500;
+  color: white;
+}
+
+.button:nth-child(-n+3) {
+  background-color: #d4d4d2;
+  color: black;
+}
+
+.button:active {
+  opacity: 0.8;
+}
+
+```
 
 ## OUTPUT
-
-
+![alt text](<exp4/simple-calculator/src/img/Screenshot 2025-04-30 103807.png>)
+![alt text](<exp4/simple-calculator/src/img/Screenshot 2025-04-30 103824.png>)
+![alt text](<exp4/simple-calculator/src/img/Screenshot 2025-04-30 103831.png>)
 ## RESULT
 The program for developing a simple calculator in React.js is executed successfully.
