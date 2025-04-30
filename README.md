@@ -1,5 +1,6 @@
 # MWAD-EXP_04-Simple-caluculator
-## Date:
+## Date: 30.04.2025
+
 
 ## AIM
 To  develop a Simple Calculator using React.js with clean and responsive design, ensuring a smooth user experience across different screen sizes.
@@ -33,7 +34,7 @@ Start the development server.
 ### STEP 8
 Open http://localhost:3000/ in the browser.
 
-### STEP 9
+### STEP 
 Test the calculator by entering numbers and operations.
 
 ### STEP 10
@@ -158,8 +159,9 @@ export default App;
 ```
 
 ## OUTPUT
-![alt text](<exp4/simple-calculator/src/img/Screenshot 2025-04-30 103807.png>)
-![alt text](<exp4/simple-calculator/src/img/Screenshot 2025-04-30 103824.png>)
-![alt text](<exp4/simple-calculator/src/img/Screenshot 2025-04-30 103831.png>)
+![Screenshot 2025-04-30 103807](https://github.com/user-attachments/assets/1e99e08b-2b1e-4052-bfcd-4d81685429b0)
+![Screenshot 2025-04-30 103824](https://github.com/user-attachments/assets/a763c578-26ee-471b-8cc7-aff9cae01a7f)
+![Screenshot 2025-04-30 103831](https://github.com/user-attachments/assets/45994a5f-89df-4a50-b9c0-3fabf29f92c1)
+
 ## RESULT
 The program for developing a simple calculator in React.js is executed successfully.
